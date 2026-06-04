@@ -1,0 +1,348 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background: #ffffff;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: white;
+    border-bottom: 1px solid #eee;
+    position: relative;
+}
+
+.nav {
+    display: flex;
+    gap: 30px;
+}
+
+.nav a {
+    color: #000;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: opacity 0.3s;
+}
+
+.nav a:hover {
+    opacity: 0.6;
+}
+
+.icons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+img[alt="logo"]{
+    width: 150px;
+}
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
+.icons img {
+    height: 20px;
+    width: auto;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.icons img:hover {
+    opacity: 1;
+}
+.profile-link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    color: #000;
+}
+.username {
+    font-size: 14px;
+    font-weight: 500;
+}
+.burger-btn {
+    display: none; 
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 100;
+}
+
+.burger-btn span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #333;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    height: 100vh;
+    background: white;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: 0.4s;
+    z-index: 90;
+    padding: 70px 20px 20px;
+}
+
+.mobile-menu nav {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.mobile-menu a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #000;
+    text-decoration: none;
+}
+
+.mobile-menu.active {
+    left: 0;
+}
+
+.burger-btn.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-btn.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.search-container {
+    position: relative;
+    display: inline-block;
+}
+.search-form {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #ddd;
+    transition: border-color 0.3s;
+}
+.search-form:focus-within {
+    border-color: #000;
+}
+.search-form input {
+    border: none;
+    padding: 8px 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    width: 200px;
+    outline: none;
+}
+.search-btn {
+    background: none;
+    border: none;
+    padding: 0 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.search-btn img {
+    width: 16px;
+    height: auto;
+    opacity: 0.7;
+}
+.search-btn:hover img {
+    opacity: 1;
+}
+.search-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-top: none;
+    z-index: 1000;
+    display: none;
+    max-height: 300px;
+    overflow-y: auto;
+}
+.suggestion-item {
+    border-bottom: 1px solid #eee;
+}
+.suggestion-item:last-child {
+    border-bottom: none;
+}
+.suggestion-item a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    transition: background 0.3s;
+}
+.suggestion-item a:hover {
+    background: #f5f5f5;
+}
+.suggestion-name {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+}
+.suggestion-brand {
+    display: block;
+    font-size: 12px;
+    color: #777;
+    text-transform: uppercase;
+}
+
+.profile-icon-container {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-link {
+    display: block;
+    position: relative;
+    width: 24px;  
+    height: 24px;
+}
+
+.profile-link img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: opacity 0.3s ease;
+}
+
+.profile-link .default-img {
+    opacity: 1;
+}
+
+.profile-link .hover-img {
+    opacity: 0;
+}
+
+.profile-link:hover .default-img {
+    opacity: 0;
+}
+
+.profile-link:hover .hover-img {
+    opacity: 1;
+}
+
+.profile-tooltip {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 10px 15px;
+    white-space: nowrap;
+    font-size: 12px;
+    color: #333;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 1000;
+    margin-top: 5px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+.profile-tooltip p {
+    margin: 0 0 5px 0;
+    font-size: 12px;
+}
+
+.profile-tooltip a {
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s;
+    margin: 0 3px;
+}
+
+.profile-tooltip a:hover {
+    border-bottom-color: #000;
+}
+
+.profile-icon-container:hover .profile-tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+@media (max-width: 768px) {
+    .nav {
+        display: none;
+    }
+    .burger-btn {
+        display: block;
+    }
+    .search-container {
+        position: relative;
+    }
+    .search-form {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        background: transparent;
+        border: none;
+    }
+    .search-form input {
+        position: absolute;
+        right: 0;
+        top: 100%;
+        width: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        background: #fff;
+        border: 1px solid #ddd;
+        padding: 8px 12px;
+        z-index: 100;
+    }
+    .search-form input.active {
+        width: 200px;
+        opacity: 1;
+        visibility: visible;
+        margin-top: 5px;
+    }
+    .search-btn {
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+    }
+    .search-btn img {
+        width: 20px;
+        height: auto;
+    }
+    .search-suggestions {
+        position: absolute;
+        top: calc(100% + 5px);
+        right: 0;
+        width: 200px;
+    }
+}

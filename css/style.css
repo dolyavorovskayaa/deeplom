@@ -1,0 +1,25 @@
+
+.breadcrumbs {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 10px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+    color: #777;
+    border-bottom: 1px solid #eee;
+    background: #fff;
+}
+.breadcrumbs a {
+    color: #777;
+    text-decoration: none;
+}
+.breadcrumbs a:hover {
+    color: #000;
+}
+.breadcrumbs span {
+    color: #000;
+    font-weight: 500;
+}
+

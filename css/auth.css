@@ -1,0 +1,128 @@
+.auth-page {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.auth-container {
+    max-width: 500px;
+    width: 100%;
+    background: #fff;
+    padding: 40px;
+    border: 1px solid #eee;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+}
+
+.auth-container h1 {
+    font-size: 28px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #000;
+}
+
+.auth-form .form-group {
+    margin-bottom: 20px;
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    background: #fff;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+}
+
+.auth-form input:focus {
+    outline: none;
+    border-color: #000;
+}
+
+.form-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.form-row input {
+    flex: 1;
+    min-width: 120px;
+}
+
+.auth-btn {
+    width: 100%;
+    padding: 14px;
+    background: none;
+    border: 2px solid #000;
+    color: #000;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.auth-btn:hover {
+    background: #000;
+    color: #fff;
+}
+
+.auth-link {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+}
+
+.auth-link a {
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 1px;
+}
+
+.auth-link a:hover {
+    border-bottom-color: #000;
+}
+
+.auth-error {
+    background: #fdeaea;
+    color: #e74c3c;
+    padding: 12px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    border-left: 3px solid #e74c3c;
+}
+
+.auth-success {
+    background: #e8f5e9;
+    color: #27ae60;
+    padding: 12px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    border-left: 3px solid #27ae60;
+}
+
+@media (max-width: 768px) {
+    .auth-container {
+        padding: 30px 20px;
+    }
+    .auth-container h1 {
+        font-size: 24px;
+    }
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+}
